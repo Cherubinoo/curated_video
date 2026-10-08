@@ -1,0 +1,12 @@
+-r requirements.txt
+
+# Rendering
+manim==0.18.1
+numpy==1.26.4
+Pillow==10.4.0
+
+# The worker image is also where the full test suite runs (it's the only
+# image with both Manim/FFmpeg and DB connectivity) - see backend/tests/ and
+# README.md's "Running tests" section.
+pytest==8.3.3
+pytest-asyncio==0.24.0

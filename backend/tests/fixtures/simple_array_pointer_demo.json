@@ -1,0 +1,378 @@
+{
+  "version": "1.0",
+  "metadata": {
+    "title": "DSA Video Studio - Platform Demo",
+    "topic": "platform-demo",
+    "duration_target": 20,
+    "difficulty": "beginner"
+  },
+  "settings": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "background_color": "#0e1116"
+  },
+  "scenes": [
+    {
+      "id": "scene_intro",
+      "type": "generic",
+      "duration": 4.5,
+      "narration": null,
+      "elements": [
+        {
+          "type": "title",
+          "id": "intro_title",
+          "content": "DSA Video Studio - Platform Demo",
+          "font_size": 52,
+          "color": "white"
+        },
+        {
+          "type": "subtitle",
+          "id": "intro_subtitle",
+          "content": "A look at what this platform can animate",
+          "font_size": 30,
+          "color": "gray"
+        }
+      ],
+      "actions": [
+        {
+          "type": "write",
+          "target": "intro_title",
+          "duration": 1.2
+        },
+        {
+          "type": "write",
+          "target": "intro_subtitle",
+          "duration": 1.0,
+          "wait_after": 0.6
+        },
+        {
+          "type": "fade_out",
+          "target": [
+            "intro_title",
+            "intro_subtitle"
+          ],
+          "duration": 0.8
+        }
+      ]
+    },
+    {
+      "id": "scene_main",
+      "type": "array",
+      "duration": 16,
+      "narration": null,
+      "elements": [
+        {
+          "type": "text",
+          "id": "caption1",
+          "content": "Watch two pointers scan the array",
+          "font_size": 36,
+          "color": "white",
+          "position": {
+            "kind": "coordinate",
+            "x": 0,
+            "y": 3.0
+          }
+        },
+        {
+          "type": "array",
+          "id": "arr1",
+          "values": [
+            4,
+            1,
+            9,
+            3,
+            7,
+            2,
+            8
+          ],
+          "cell_size": 1.0,
+          "color": "white",
+          "position": {
+            "kind": "coordinate",
+            "x": 0,
+            "y": 1.6
+          }
+        },
+        {
+          "type": "code_block",
+          "id": "code1",
+          "language": "text",
+          "lines": [
+            "left, right = 0, len(arr) - 1",
+            "while left < right:",
+            "    step(left, right)",
+            "    left += 1",
+            "    right -= 1"
+          ],
+          "font_size": 24,
+          "position": {
+            "kind": "coordinate",
+            "x": 0,
+            "y": -1.8
+          }
+        },
+        {
+          "type": "pointer",
+          "id": "left_ptr",
+          "target": "arr1",
+          "index": 0,
+          "label": "L",
+          "color": "blue"
+        },
+        {
+          "type": "pointer",
+          "id": "right_ptr",
+          "target": "arr1",
+          "index": 6,
+          "label": "R",
+          "color": "orange"
+        },
+        {
+          "type": "text",
+          "id": "result_text",
+          "content": "Pointers meet in the middle!",
+          "font_size": 32,
+          "color": "gold",
+          "position": {
+            "kind": "coordinate",
+            "x": 0,
+            "y": -3.3
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "write",
+          "target": "caption1",
+          "duration": 1.0
+        },
+        {
+          "type": "create",
+          "target": [
+            "arr1"
+          ],
+          "duration": 1.0
+        },
+        {
+          "type": "create",
+          "target": [
+            "code1"
+          ],
+          "duration": 1.0
+        },
+        {
+          "type": "create",
+          "target": [
+            "left_ptr"
+          ],
+          "duration": 0.4
+        },
+        {
+          "type": "create",
+          "target": [
+            "right_ptr"
+          ],
+          "duration": 0.4
+        },
+        {
+          "type": "highlight_code_line",
+          "target": "code1",
+          "line_number": 0,
+          "color": "yellow",
+          "duration": 0.3
+        },
+        {
+          "type": "wait",
+          "duration": 0.3
+        },
+        {
+          "type": "highlight_code_line",
+          "target": "code1",
+          "line_number": 1,
+          "color": "yellow",
+          "duration": 0.3
+        },
+        {
+          "type": "highlight",
+          "target": "arr1",
+          "index": 0,
+          "color": "blue",
+          "duration": 0.3
+        },
+        {
+          "type": "highlight",
+          "target": "arr1",
+          "index": 6,
+          "color": "orange",
+          "duration": 0.3
+        },
+        {
+          "type": "highlight_code_line",
+          "target": "code1",
+          "line_number": 2,
+          "color": "yellow",
+          "duration": 0.3
+        },
+        {
+          "type": "move_pointer",
+          "target": "left_ptr",
+          "index": 1,
+          "duration": 0.5
+        },
+        {
+          "type": "move_pointer",
+          "target": "right_ptr",
+          "index": 5,
+          "duration": 0.5
+        },
+        {
+          "type": "highlight_code_line",
+          "target": "code1",
+          "line_number": 3,
+          "color": "yellow",
+          "duration": 0.2
+        },
+        {
+          "type": "highlight_code_line",
+          "target": "code1",
+          "line_number": 4,
+          "color": "yellow",
+          "duration": 0.2
+        },
+        {
+          "type": "move_pointer",
+          "target": "left_ptr",
+          "index": 2,
+          "duration": 0.5
+        },
+        {
+          "type": "move_pointer",
+          "target": "right_ptr",
+          "index": 4,
+          "duration": 0.5
+        },
+        {
+          "type": "move_pointer",
+          "target": "left_ptr",
+          "index": 3,
+          "duration": 0.5
+        },
+        {
+          "type": "move_pointer",
+          "target": "right_ptr",
+          "index": 3,
+          "duration": 0.5
+        },
+        {
+          "type": "highlight",
+          "target": "arr1",
+          "index": 3,
+          "color": "gold",
+          "duration": 0.6
+        },
+        {
+          "type": "fade_in",
+          "target": [
+            "result_text"
+          ],
+          "duration": 0.8
+        },
+        {
+          "type": "camera_zoom",
+          "scale": 0.6,
+          "duration": 1.0
+        },
+        {
+          "type": "wait",
+          "duration": 0.8
+        },
+        {
+          "type": "camera_zoom",
+          "scale": 1.6667,
+          "duration": 1.0
+        },
+        {
+          "type": "wait",
+          "duration": 0.3
+        },
+        {
+          "type": "fade_out",
+          "target": [
+            "arr1",
+            "code1",
+            "left_ptr",
+            "right_ptr",
+            "caption1",
+            "result_text"
+          ],
+          "duration": 1.0
+        }
+      ]
+    },
+    {
+      "id": "scene_outro",
+      "type": "generic",
+      "duration": 5.5,
+      "narration": null,
+      "elements": [
+        {
+          "type": "title",
+          "id": "outro_title",
+          "content": "Thanks for Watching",
+          "font_size": 48,
+          "color": "white"
+        },
+        {
+          "type": "subtitle",
+          "id": "outro_subtitle",
+          "content": "DSA Video Studio - Platform Demo",
+          "font_size": 28,
+          "color": "gray"
+        }
+      ],
+      "actions": [
+        {
+          "type": "fade_in",
+          "target": [
+            "outro_title"
+          ],
+          "duration": 1.0
+        },
+        {
+          "type": "wait",
+          "duration": 0.8
+        },
+        {
+          "type": "fade_in",
+          "target": [
+            "outro_subtitle"
+          ],
+          "duration": 0.8
+        },
+        {
+          "type": "wait",
+          "duration": 1.0
+        },
+        {
+          "type": "fade_out",
+          "target": [
+            "outro_title",
+            "outro_subtitle"
+          ],
+          "duration": 1.0
+        }
+      ]
+    }
+  ],
+  "assets": [],
+  "audio": {
+    "enabled": false,
+    "narration_script": null,
+    "voice_provider": "none"
+  },
+  "subtitles": {
+    "enabled": false,
+    "provider": "none"
+  }
+}

@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# Node
+node_modules/
+.next/
+out/
+
+# Env
+.env
+.env.*
+!.env.example
+
+# Storage / media
+storage/
+!backend/tests/fixtures/**
+
+# Manim
+media/
+**/media/
+*.mp4
+!frontend/public/**/*.mp4
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Alembic (keep versions, ignore nothing extra)
